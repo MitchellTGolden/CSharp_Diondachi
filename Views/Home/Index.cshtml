@@ -1,0 +1,43 @@
+﻿@model Dachi;
+<div class="text-center">
+    <h1>You've made it, Hatch the Egg to start.</h1>
+    <div style="border:1px solid black; width:fit-content;" class="mx-auto mb-3">
+        @switch (ViewBag.EggCrack)
+        {
+            case 0:
+                <img class="m-5" style="width: 200px;" src="~/img/dachiEgg.png" alt="">
+                break;
+            case 1:
+                <img class="m-5" style="width: 200px;" src="~/img/dachiEgg1.png" alt="">
+                break;
+            case 2:
+                <img class="m-5" style="width: 200px;" src="~/img/dachiEgg2.png" alt="">
+                break;
+            case 3:
+                <img class="m-5" style="width: 200px;" src="~/img/dachiEgg3.png" alt="">
+                break;
+            case 4:
+                <img class="m-5" style="width: 200px;" src="~/img/DachiSleep.png" alt="">
+                break;
+        }
+    </div>
+    @switch (ViewBag.EggCrack)
+    {
+        case 0:
+            <a class="btn btn-danger" href="/">Crack the Egg!</a>
+            break;
+        case 1:
+            <a class="btn btn-danger" href="/">Keep Going!</a>
+            break;
+        case 2:
+            <a class="btn btn-danger" href="/">One more should do it!</a>
+            break;
+        case 3:
+            <a class="btn btn-danger" href="/">Maybe I was wrong... one more!</a>
+            break;
+        case 4:
+            <h3>Your Diondachi has hatched!</h3>
+            <partial name="Create"/>
+            break;
+    }
+</div>

@@ -1,0 +1,73 @@
+@model Dachi;
+@if (Model.Happiness >= 100 && Model.Fullness >= 100 && Model.Energy >= 100)
+{
+    <h1>You've Done it! @ViewBag.Name's Diondatchi is victorious!</h1>
+    <img src="~/img/dachi1.png" alt="">
+    <a class="btn btn-danger" href="reset">Play again!</a>
+}
+else{
+
+@if (Model.Happiness > 0 && Model.Fullness > 0)
+{
+
+    <p class="text-center">Diondatchi - @ViewBag.Name</p>
+    <div class="d-flex justify-content-between m-4">
+        <p>Fullness:@Model.Fullness</p>
+        <p>Happiness:@Model.Happiness</p>
+        <p>Meals: @Model.Meals</p>
+        <p>Energy Level: @Model.Energy</p>
+    </div>
+    @switch (ViewBag.Emote)
+    {   
+        case 0:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi4.png" alt="">
+            </div>
+        break;
+        case 1:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi3.png" alt="">
+            </div>
+
+        break;
+        case 2:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi2.png" alt="">
+            </div>
+        break;
+        case 3:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi3.png" alt="">
+            </div>
+        break;
+        case 4:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi6.png" alt="">
+            </div>
+            break;
+        case 5:
+            <div>
+            <p>@ViewBag.Result</p>
+            <img class="m-5" style="width: 200px;" src="~/img/dachi5.png" alt="">
+            </div>
+            break;
+        default:
+        <div>
+        <img class="m-5" style="width: 200px;" src="~/img/dachi1.png" alt="">
+        </div>
+        break;
+    }
+
+}
+else
+{
+    <img src="~/img/dachi3.png" alt="">
+
+    <a class="btn btn-danger" href="reset">You've let your Diondatchi die, let's try that again!</a>
+}
+}

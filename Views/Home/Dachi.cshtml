@@ -1,0 +1,17 @@
+@model Dachi;
+<div class="text-center">
+<partial name="StatPartial" />
+
+@if (Model.Happiness >= 100 && Model.Fullness >= 100 && Model.Energy >= 100)
+{
+    
+}
+else{
+    @if (Model.Happiness > 0 && Model.Fullness > 0)
+{
+    <partial name="ActionsPartial"/>
+}
+}
+
+
+</div>
